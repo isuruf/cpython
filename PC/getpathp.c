@@ -779,13 +779,18 @@ calculate_module_search_path(PyCalculatePath *calculate,
                              const wchar_t *zip_path)
 {
     int skiphome = calculate->home==NULL ? 0 : 1;
-#ifdef Py_ENABLE_SHARED
-    if (!Py_IgnoreEnvironmentFlag) {
-        calculate->machine_path = getpythonregpath(HKEY_LOCAL_MACHINE,
-                                                   skiphome);
+    char * allow_registry_paths = getenv("CONDA_PY_ALLOW_REG_PATHS");
+    if (!Py_IgnoreEnvironmentFlag && allow_registry_paths && allow_registry_paths[0] != '0')
+    {
+        calculate->machine_path = getpythonregpath(HKEY_LOCAL_MACHINE, skiphome);
         calculate->user_path = getpythonregpath(HKEY_CURRENT_USER, skiphome);
     }
-#endif
+    else
+    {
+        calculate->machine_path = NULL;
+        calculate->user_path = NULL;
+    }
+
     /* We only use the default relative PYTHONPATH if we haven't
        anything better to use! */
     int skipdefault = (calculate->pythonpath_env != NULL ||
