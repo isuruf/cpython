@@ -3744,6 +3744,8 @@ fi
 printf "%s\n" "\"$MACHDEP\"" >&6; }
 
 
+if test -z "${_PYTHON_HOST_PLATFORM}"
+then
 if test "$cross_compiling" = yes; then
 	case "$host" in
 	*-*-linux*)
@@ -3767,6 +3769,7 @@ if test "$cross_compiling" = yes; then
 		as_fn_error $? "cross build not supported for $host" "$LINENO" 5
 	esac
 	_PYTHON_HOST_PLATFORM="$MACHDEP${_host_cpu:+-$_host_cpu}"
+fi
 fi
 
 # Some systems cannot stand _XOPEN_SOURCE being defined at all; they
@@ -6801,7 +6804,7 @@ fi
 if test "$cross_compiling" = yes; then
     case "$READELF" in
 	readelf|:)
-	as_fn_error $? "readelf for the host is required for cross builds" "$LINENO" 5
+	#as_fn_error $? "readelf for the host is required for cross builds" "$LINENO" 5
 	;;
     esac
 fi
@@ -10516,7 +10519,7 @@ rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
   conftest.$ac_objext conftest.beam conftest.$ac_ext
 fi
 
-
+    if test -z "${MACOSX_DEFAULT_ARCH}"; then
     if test "${ac_osx_32bit}" = "yes"; then
     	case `/usr/bin/arch` in
     	i386)
@@ -10545,6 +10548,7 @@ fi
     		;;
     	esac
 
+    fi
     fi
 
     LIBTOOL_CRUFT=$LIBTOOL_CRUFT" -lSystem -lSystemStubs -arch_only ${MACOSX_DEFAULT_ARCH}"
