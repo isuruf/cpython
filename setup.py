@@ -62,7 +62,7 @@ CROSS_COMPILING = ("_PYTHON_HOST_PLATFORM" in os.environ)
 HOST_PLATFORM = get_platform()
 MS_WINDOWS = (HOST_PLATFORM == 'win32')
 CYGWIN = (HOST_PLATFORM == 'cygwin')
-MACOS = (HOST_PLATFORM == 'darwin')
+MACOS = (HOST_PLATFORM.startswith('darwin'))
 AIX = (HOST_PLATFORM.startswith('aix'))
 VXWORKS = ('vxworks' in HOST_PLATFORM)
 
