@@ -55,6 +55,7 @@
     
     <!-- Directories of external projects. tcltk is handled in tcltk.props -->
     <ExternalsDir>$(EXTERNALS_DIR)</ExternalsDir>
+    <condaDir>$(LIBRARY_PREFIX)\</condaDir>
     <ExternalsDir Condition="$(ExternalsDir) == ''">$([System.IO.Path]::GetFullPath(`$(PySourcePath)externals`))</ExternalsDir>
     <ExternalsDir Condition="!HasTrailingSlash($(ExternalsDir))">$(ExternalsDir)\</ExternalsDir>
     <sqlite3Dir>$(SQLITE3_DIR)\</sqlite3Dir>
