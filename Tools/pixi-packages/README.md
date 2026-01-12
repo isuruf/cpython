@@ -22,11 +22,11 @@ Each package definition is contained in a subdirectory, but they share the build
 - `default`
 - `freethreading`
 - `asan`: ASan-instrumented build
-- `tsan_freethreading`: TSan-instrumented free-threading build
+- `tsan-freethreading`: TSan-instrumented free-threading build
 
 ## Maintenance
 
-- Keep the `abi_tag` and `version` fields in each `pixi.toml` up to date with the Python version
+- Keep the `version` field in `recipe.yaml` up to date with the Python version
 - Update `build.sh` for any breaking changes in the `configure` and `make` workflow
 
 ## Opportunities for future improvement

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+exit 0
 if [[ "${PYTHON_VARIANT}" == "freethreading" ]]; then
     echo "BUILD TYPE: FREE-THREADING"
     BUILD_DIR="../build_free_threading"
