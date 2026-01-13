@@ -5,6 +5,7 @@ preview = ["pixi-build"]
 
 [workspace.build-variants]
 variant = ["default"]
+abi_tag = ["cp35"]
 
 [package.build.backend]
 name = "pixi-build-rattler-build"
