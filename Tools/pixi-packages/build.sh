@@ -1,6 +1,5 @@
 #!/bin/bash
 
-exit 0
 if [[ "${PYTHON_VARIANT}" == "freethreading" ]]; then
     echo "BUILD TYPE: FREE-THREADING"
     BUILD_DIR="../build_free_threading"
@@ -23,6 +22,7 @@ else
     echo "Unknown variant: ${PYTHON_VARIANT}"
     exit 1
 fi
+exit 0
 
 mkdir -p "${BUILD_DIR}"
 cd "${BUILD_DIR}"
