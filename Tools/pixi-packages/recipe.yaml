@@ -1,6 +1,9 @@
 context:
-  # Keep up to date
+  version: ${{ version | default("3.15") }}
+  variant: ${{ variant | default("default") }}
   freethreading_tag: ${{ "t" if "freethreading" in variant else "" }}
+  abi_tag: ${{ variant | default("cp" ~ (version | split(".") | join("")) ~ freethreading_tag) }}
+  # Keep up to date
 
 recipe:
   name: python
