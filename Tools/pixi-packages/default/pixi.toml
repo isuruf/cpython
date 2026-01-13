@@ -11,4 +11,4 @@ name = "pixi-build-rattler-build"
 version = "*"
 
 [package.build.config]
-recipe_yaml = "../recipe.yaml"
+recipe-yaml = "../recipe.yaml"
