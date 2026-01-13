@@ -1,6 +1,7 @@
 variant:
-  - asan
-abi_tag:
-  - cp315
+  - default
 version:
   - 3.15
+abi_tag:
+  - cp315
+
