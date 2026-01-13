@@ -15,10 +15,13 @@ elif [[ "${PYTHON_VARIANT}" == "tsan_freethreading" ]]; then
     BUILD_DIR="../build_tsan_free_threading"
     CONFIGURE_EXTRA="--disable-gil --with-thread-sanitizer"
     export TSAN_OPTIONS="suppressions=${SRC_DIR}/Tools/tsan/suppressions_free_threading.txt"
-else
+elif [[ "${PYTHON_VARIANT}" == "default" ]]; then
     echo "BUILD TYPE: DEFAULT"
     BUILD_DIR="../build"
     CONFIGURE_EXTRA=""
+else
+    echo "Unknown variant: ${PYTHON_VARIANT}"
+    exit 1
 fi
 
 mkdir -p "${BUILD_DIR}"
