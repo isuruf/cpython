@@ -8,7 +8,7 @@ variant = ["default"]
 
 [package.build.backend]
 name = "pixi-build-rattler-build"
-version = ">=0.3.6"
+version = "*"
 
 [package.build.config]
 recipe_yaml = "../recipe.yaml"
