@@ -1,15 +1,12 @@
 context:
   # Keep up to date
-  version: ${{ version }}
-  variant: ${{ variant }}
   freethreading_tag: ${{ "t" if "freethreading" in variant else "" }}
-  abi_tag: ${{ abi_tag }}
 
 recipe:
   name: python
 
 source:
-  - path: ../../..
+  - path: ../..
 
 outputs:
 - package:
@@ -30,7 +27,7 @@ outputs:
       exclude:
         - "*.o"
     script:
-      file: ../build.sh
+      file: build.sh
       env:
         PYTHON_VARIANT: ${{ variant }}
     python:
