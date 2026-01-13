@@ -6,7 +6,7 @@ context:
   version: ${{ version }}
   variant: ${{ variant }}
   freethreading_tag: ${{ "t" if "freethreading" in variant else "" }}
-  abi_tag: ${{ "cp" ~ (version | split(".") | join("")) ~ freethreading_tag }}
+  abi_tag: ${{ abi_tag }}
   # Keep up to date
 
 recipe:
