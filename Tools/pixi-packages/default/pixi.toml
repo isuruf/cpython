@@ -7,5 +7,10 @@ preview = ["pixi-build"]
 name = "pixi-build-rattler-build"
 version = "*"
 
+[workspace.build-variants]
+variant = ["default"]
+version = ["3.15"]
+abi_tag = ["cp315"]
+
 [package.build.config]
 recipe-yaml = "../recipe.yaml"
