@@ -17,6 +17,8 @@ else
     exit 1
 fi
 
+exit 0
+
 BUILD_DIR="../build_${PYTHON_VARIANT}"
 mkdir -p "${BUILD_DIR}"
 cd "${BUILD_DIR}"
