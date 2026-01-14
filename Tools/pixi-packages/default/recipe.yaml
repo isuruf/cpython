@@ -13,7 +13,7 @@ outputs:
     name: python_abi
     version: ${{ version }}
   build:
-    string: "0_${{ abi_tag }}"
+    string: "1_${{ abi_tag }}"
   requirements:
     run_constraints:
       - python ${{ version }}.* *_${{ abi_tag }}
@@ -22,7 +22,7 @@ outputs:
     name: python
     version: ${{ version }}
   build:
-    string: "0_${{ abi_tag }}"
+    string: "1_${{ abi_tag }}"
     files:
       exclude:
         - "*.o"
