@@ -1,4 +1,2 @@
 variant:
   - asan
-version:
-  - 3.15
